@@ -1,0 +1,58 @@
+#+STARTUP: content
+
+* Lordar Theme                                                   :Noexport_2:
+
+[[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPL%20v3-blue.svg]]
+
+A minimalistic dark and light theme for Emacs. 
+
+It uses the HSLuv color space which was designed for perceptual uniformity. This means that the colors are all perceived as having the same brightness.
+
+-----
+
+** Contents
+
+- [[#installation][Installation]]
+- [[#usage][Usage]]
+- [[#customization][Customization]]
+- [[#changelog][Changelog]]
+- [[#contributing][Contributing]]
+
+** Installation
+:PROPERTIES:
+:CUSTOM_ID: installation
+:END:
+
+This package is not available on MELPA/ELPA. Install it from Github by using ~package-vc-install~ (Emacs >= 29) or with a package manager like [[https://github.com/progfolio/elpaca][Elpaca]].
+
+** Usage
+:PROPERTIES:
+:CUSTOM_ID: usage
+:END:
+
+Enable the themes with the functions provided:
+
+- ~lordar-light-theme-enable~
+- (not implemented yet) ~lordar-dark-theme-enable~
+
+** Customization
+:PROPERTIES:
+:CUSTOM_ID: customization
+:END:
+
+*** Variables
+
+Set the following variables to change the behaviour of the package:
+
+| Variable | Default | Description |
+|----------+---------+-------------|
+|          |         |             |
+
+*** Faces
+
+The theme defines faces that are set at the beginning of the theme to be able to inherit them later on:
+
+| Face | Description |
+|------+-------------|
+|      |             |
+|      |             |
