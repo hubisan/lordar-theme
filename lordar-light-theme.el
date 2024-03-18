@@ -25,11 +25,76 @@
 
 ;;;; Requirements
 
-(require 'lordar-theme)
+(require 'lordar-themes)
 
 ;;;; Variables
 
 ;;;; Customization
+
+(defgroup lordar-light-theme nil
+  "Lordar theme customization."
+  :group 'faces)
+
+(defface lordar-light-theme-default nil
+  "Default face to use."
+  :group nil)
+
+(defface lordar-light-theme-bold
+  '((t (:bold t)))
+  "Bold face."
+  :group nil)
+
+(defface lordar-light-theme-strong nil
+  "Emphasize information of structural nature."
+  :group nil)
+
+(defface lordar-light-theme-faded nil
+  "Faded face is for information that are less important."
+  :group nil)
+
+(defface lordar-light-theme-subtle nil
+  "Subtle face is used to suggest a physical area on the screen."
+  :group nil)
+
+(defface lordar-light-theme-keyword nil
+  "Default keyword face."
+  :group nil)
+
+(defface lordar-light-theme-type nil
+  "Default type face."
+  :group nil)
+
+(defface lordar-light-theme-verbatim nil
+  "Used for things like strings."
+  :group nil)
+
+(defface lordar-light-theme-highlight nil
+  "Default highlight face."
+  :group nil)
+
+(defface lordar-light-theme-success nil
+  "Used to show something is successfull."
+  :group nil)
+
+(defface lordar-light-theme-success-inversed nil
+  "Used to show something is successfull, inversed."
+  :group nil)
+
+(defface lordar-light-theme-warning nil
+  "Used for warnings."
+  :group nil)
+
+(defface lordar-light-theme-warning-inversed nil
+  "Used for warnings, inversed."
+  :group nil)
+
+(defface lordar-light-theme-error nil
+  "Used for errors."
+  :group nil)
+
+(defface lordar-light-theme-error-inversed nil
+  "Used for errors, inversed."
+  :group nil)
 
 ;;;; Helpers
 
@@ -91,22 +156,22 @@
 
 ;;;;; Custom
 
-   `(lordar-theme-default ((t (:inherit default))))
-   `(lordar-theme-bold ((t (:weight bold))))
-   `(lordar-theme-strong ((t (:inherit lordar-theme-bold :foreground ,blue))))
-   `(lordar-theme-faded ((t :foreground ,grey-faded)))
-   `(lordar-theme-subtle ((t :foreground ,blue-subtle)))
-   `(lordar-theme-keyword ((t :foreground ,blue)))
-   `(lordar-theme-type ((t :foreground ,blue)))
-   `(lordar-theme-verbatim ((t :foreground ,yellow)))
-   `(lordar-theme-hightlight ((t :foreground ,blue)))
+   `(lordar-light-theme-default ((t (:inherit default))))
+   `(lordar-light-theme-bold ((t (:weight bold))))
+   `(lordar-light-theme-strong ((t (:inherit lordar-light-theme-bold :foreground ,blue))))
+   `(lordar-light-theme-faded ((t :foreground ,grey-faded)))
+   `(lordar-light-theme-subtle ((t :foreground ,blue-subtle)))
+   `(lordar-light-theme-keyword ((t :foreground ,blue)))
+   `(lordar-light-theme-type ((t :foreground ,blue)))
+   `(lordar-light-theme-verbatim ((t :foreground ,yellow)))
+   `(lordar-light-theme-hightlight ((t :foreground ,blue)))
 
-   `(lordar-theme-success ((t :foreground ,green)))
-   `(lordar-theme-success-inversed ((t :foreground ,green-subtle :background ,green)))
-   `(lordar-theme-warning ((t :foreground ,orange)))
-   `(lordar-theme-warning-inversed ((t :foreground ,orange-subtle :background ,orange)))
-   `(lordar-theme-error ((t :foreground ,green)))
-   `(lordar-theme-error-inversed ((t :foreground ,red-subtle :background ,red)))
+   `(lordar-light-theme-success ((t :foreground ,green)))
+   `(lordar-light-theme-success-inversed ((t :foreground ,green-subtle :background ,green)))
+   `(lordar-light-theme-warning ((t :foreground ,orange)))
+   `(lordar-light-theme-warning-inversed ((t :foreground ,orange-subtle :background ,orange)))
+   `(lordar-light-theme-error ((t :foreground ,green)))
+   `(lordar-light-theme-error-inversed ((t :foreground ,red-subtle :background ,red)))
 
 ;;;;; Basis
 
@@ -168,7 +233,7 @@
    `(hl-line ((t (:background ,blue-subtle))))
 
    `(show-paren-match ((t (:foreground ,blue-subtle :background ,blue-faded :weight bold))))
-   `(show-paren-mismatch ((t (:inherit lordar-theme-error-inversed))))
+   `(show-paren-mismatch ((t (:inherit lordar-light-theme-error-inversed))))
 
    ;;;; rainbow-delimiters
    `(rainbow-delimiters-depth-1-face ((t (:foreground ,grey-faded))))
@@ -193,7 +258,7 @@
 ;;;; Custom Variables
 
   (custom-theme-set-variables
-   'lorisan
+   'lordar-light
    ;;;; pos-tip
    ;; `(pos-tip-foreground-color ,grey-lighter)
    ;; `(pos-tip-background-color ,blue2-darkest)

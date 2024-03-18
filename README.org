@@ -4,9 +4,11 @@
 
 [[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPL%20v3-blue.svg]]
 
-A minimalistic dark and light theme for Emacs. 
+A minimalistic dark and light theme for Emacs.
 
-It uses the HSLuv color space which was designed for perceptual uniformity. This means that the colors are all perceived as having the same brightness.
+The light theme's background mimics the creamy color of paper used in books.
+
+It utilizes the HSLuv color space, which was designed for perceptual uniformity. This ensures that colors are perceived as having the same brightness.
 
 -----
 
@@ -15,8 +17,6 @@ It uses the HSLuv color space which was designed for perceptual uniformity. This
 - [[#installation][Installation]]
 - [[#usage][Usage]]
 - [[#customization][Customization]]
-- [[#changelog][Changelog]]
-- [[#contributing][Contributing]]
 
 ** Installation
 :PROPERTIES:
@@ -33,14 +33,16 @@ This package is not available on MELPA/ELPA. Install it from Github by using ~pa
 Enable the themes with the functions provided:
 
 - ~lordar-light-theme-enable~
-- (not implemented yet) ~lordar-dark-theme-enable~
+- (not implemented) ~lordar-dark-theme-enable~
 
 ** Customization
 :PROPERTIES:
 :CUSTOM_ID: customization
 :END:
 
-*** Variables
+*** Lordar-light-theme
+
+**** Variables
 
 Set the following variables to change the behaviour of the package:
 
@@ -48,7 +50,7 @@ Set the following variables to change the behaviour of the package:
 |----------+---------+-------------|
 |          |         |             |
 
-*** Faces
+**** Faces
 
 The theme defines faces that are set at the beginning of the theme to be able to inherit them later on:
 
@@ -56,3 +58,5 @@ The theme defines faces that are set at the beginning of the theme to be able to
 |------+-------------|
 |      |             |
 |      |             |
+
+
