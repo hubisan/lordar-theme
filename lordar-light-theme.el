@@ -47,7 +47,6 @@
 ;; Subtle means there is just a hint of the color left.
 (let (
       (cream "#f6e5cc")
-      ;; (cream "#f1e6d5")
       ;; (cream "#f7e9d5")
       (ink "#000000")
       (red "#a30030")
