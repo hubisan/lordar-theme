@@ -37,15 +37,18 @@
 (defun lordar-light-theme-enable ()
   "Load and enable `lordar-light-theme'."
   (interactive)
-  (lordar-theme-enable 'lordar-light-theme))
+  (lordar-theme--enable 'lordar-light))
 
-;;;; Theme
+;;;; Define Theme
 
 (deftheme lordar-light "Lordar-light, minimalistic light theme")
 
 ;; Faded means the colors is faded but still has a contrast ratio of around 4.5.
 ;; Subtle means there is just a hint of the color left.
-(let ((cream "#f6e5cc")
+(let (
+      (cream "#f6e5cc")
+      ;; (cream "#f1e6d5")
+      ;; (cream "#f7e9d5")
       (ink "#000000")
       (red "#a30030")
       (red-faded "#b53e48")
@@ -62,7 +65,10 @@
       (teal "#005290")
       (teal-faded "#48699b")
       (teal-subtle "#e0d4c6")           ; #c9c2b
-      (blue "#5139b4")
+      ;; (blue "#5139b4")
+      ;; (blue "#27007d")
+      (blue "#1d0061")
+      ;; (blue "#27007d")
       (blue-faded "#7555b9")
       (blue-subtle "#e6d0ca")           ; #d6bcc8
       (purple "#783289")
@@ -74,88 +80,152 @@
       (grey "#505050")
       (grey-faded "#6a6764")
       (grey-subtle "#e3d4be"))          ; #cec2af
+
   (custom-theme-set-faces
- 'lordar-light-theme
+   'lordar-light
+
+;;;;; Base
+
+   `(default ((t (:weight normal :foreground ,ink :background ,cream))))
+   `(cursor ((t (:background ,blue-faded))))
 
 ;;;;; Custom
 
- `(lordar-theme-default ((t (:foreground ,ink :background ,cream))))
- `(lordar-theme-bold ((t (:weight bold))))
- `(lordar-theme-strong ((t (:inherit lordar-theme-bold :foreground ,blue))))
- `(lordar-theme-faded ((t :foreground ,grey-faded)))
- `(lordar-theme-subtle ((t :foreground ,blue-subtle)))
- `(lordar-theme-keyword ((t :foreground ,blue)))
- `(lordar-theme-type ((t :foreground ,blue)))
- `(lordar-theme-verbatim ((t :foreground ,blue-faded)))
- `(lordar-theme-hightlight ((t :foreground ,blue)))
+   `(lordar-theme-default ((t (:inherit default))))
+   `(lordar-theme-bold ((t (:weight bold))))
+   `(lordar-theme-strong ((t (:inherit lordar-theme-bold :foreground ,blue))))
+   `(lordar-theme-faded ((t :foreground ,grey-faded)))
+   `(lordar-theme-subtle ((t :foreground ,blue-subtle)))
+   `(lordar-theme-keyword ((t :foreground ,blue)))
+   `(lordar-theme-type ((t :foreground ,blue)))
+   `(lordar-theme-verbatim ((t :foreground ,yellow)))
+   `(lordar-theme-hightlight ((t :foreground ,blue)))
 
- `(lordar-theme-success ((t :foreground ,green)))
- `(lordar-theme-success-inversed ((t :foreground ,green-subtle :background ,green)))
- `(lordar-theme-warning ((t :foreground ,orange)))
- `(lordar-theme-warning-inversed ((t :foreground ,orange-subtle :background ,orange)))
- `(lordar-theme-error ((t :foreground ,green)))
- `(lordar-theme-error-inversed ((t :foreground ,red-subtle :background ,red)))
+   `(lordar-theme-success ((t :foreground ,green)))
+   `(lordar-theme-success-inversed ((t :foreground ,green-subtle :background ,green)))
+   `(lordar-theme-warning ((t :foreground ,orange)))
+   `(lordar-theme-warning-inversed ((t :foreground ,orange-subtle :background ,orange)))
+   `(lordar-theme-error ((t :foreground ,green)))
+   `(lordar-theme-error-inversed ((t :foreground ,red-subtle :background ,red)))
 
 ;;;;; Basis
- `(default ((t (:inherit (lordar-theme-default)))))
- `(cursor ((t ())))
 
- `(fixed-pitch ((t (:family "Monospace"))))
- `(variable-pitch ((t (:family "Alegreya" :height 120))))
- `(escape-glyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
- `(homoglyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
- `(minibuffer-prompt ((t (:foreground "#84ADFF"))))
- `(highlight ((t (:inverse-video nil :background "#272829"))))
- `(region ((t (:extend t :background "#332673"))))
- `(shadow ((t (:foreground "#e1e2e5"))))
- `(secondary-selection ((t (:extend t :background "#2b293b"))))
- `(trailing-whitespace ((t (:underline (:color "#FE0400" :style wave :position nil) :background "#272829"))))
- `(font-lock-bracket-face ((t (:inherit (font-lock-punctuation-face)))))
- `(font-lock-builtin-face ((t (:foreground "#FF85C2"))))
- `(font-lock-comment-delimiter-face ((t (:slant normal :foreground "#757399"))))
- `(font-lock-comment-face ((t (:slant normal :foreground "#757399"))))
- `(font-lock-constant-face ((t (:foreground "#00D7C5"))))
- `(font-lock-delimiter-face ((t (:inherit (font-lock-punctuation-face)))))
- `(font-lock-doc-face ((t (:slant normal :foreground "#757399"))))
- `(font-lock-doc-markup-face ((t (:inherit (font-lock-constant-face)))))
- `(font-lock-escape-face ((t (:inherit (font-lock-regexp-grouping-backslash)))))
- `(font-lock-function-call-face ((t (:inherit (font-lock-function-name-face)))))
- `(font-lock-function-name-face ((t (:foreground "#47C299"))))
- `(font-lock-keyword-face ((t (:foreground "#FF256F"))))
- `(font-lock-negation-char-face ((t (:foreground "#FE0400"))))
- `(font-lock-number-face ((t nil)))
- `(font-lock-misc-punctuation-face ((t (:inherit (font-lock-punctuation-face)))))
- `(font-lock-operator-face ((t nil)))
- `(font-lock-preprocessor-face ((t (:foreground "#FF85C2"))))
- `(font-lock-property-name-face ((t (:inherit (font-lock-variable-name-face)))))
- `(font-lock-property-use-face ((t (:inherit (font-lock-property-name-face)))))
- `(font-lock-punctuation-face ((t nil)))
- `(font-lock-regexp-grouping-backslash ((t (:foreground "#00D2F2"))))
- `(font-lock-regexp-grouping-construct ((t (:foreground "#C877F0"))))
- `(font-lock-string-face ((t (:foreground "#E5C495"))))
- `(font-lock-type-face ((t (:foreground "#FF8A9D"))))
- `(font-lock-variable-name-face ((t (:foreground "#A9A4FF"))))
- `(font-lock-variable-use-face ((t (:inherit (font-lock-variable-name-face)))))
- `(font-lock-warning-face ((t (:foreground "#FF6D3C"))))
- `(button ((t (:underline nil :foreground "#A9A4FF"))))
- `(link ((t (:underline nil :foreground "#A9A4FF"))))
- `(link-visited ((t (:underline nil :foreground "#918BFF"))))
- `(fringe ((t (:foreground "#272829" :background "#090517"))))
- `(header-line ((t (:foreground "#FF80E3" :background "#090517"))))
- `(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
- `(mode-line ((t (:foreground "#7c78b9" :background "#1b1d4a"))))
- `(mode-line-buffer-id ((t (:foreground "#00F1DD"))))
- `(mode-line-emphasis ((t (:foreground "#FF80E3"))))
- `(mode-line-highlight ((t (:foreground "#FF80E3"))))
- `(mode-line-inactive ((t (:box nil :foreground "#979AA1" :background "#171718" :inherit (mode-line)))))
- `(isearch ((t (:inverse-video t :foreground "#ffb54c" :background "#090517"))))
- `(isearch-fail ((t (:foreground "#090517" :background "#FF6D3C"))))
- `(lazy-highlight ((t (:inverse-video t :foreground "#A9A4FF" :background "#090517"))))
- `(match ((t (:inverse-video t :foreground "#ffb54c" :background "#090517"))))
- `(next-error ((t (:inherit (region)))))
- `(query-replace ((t (:inherit (isearch))))))
+   ;; `(fixed-pitch ((t (:family "Monospace"))))
+   ;; `(variable-pitch ((t (:family "Alegreya" :height 120))))
+   ;; `(escape-glyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
+   ;; `(homoglyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
+   ;; `(minibuffer-prompt ((t (:foreground "#84ADFF"))))
+   ;; `(highlight ((t (:inverse-video nil :background "#272829"))))
+   ;; `(region ((t (:extend t :background "#332673"))))
+   ;; `(shadow ((t (:foreground "#e1e2e5"))))
+   ;; `(secondary-selection ((t (:extend t :background "#2b293b"))))
+   ;; `(trailing-whitespace ((t (:underline (:color "#FE0400" :style wave :position nil) :background "#272829"))))
+   ;; `(font-lock-bracket-face ((t (:inherit (font-lock-punctuation-face)))))
+   `(font-lock-builtin-face ((t (:foreground ,blue))))
+   `(font-lock-comment-face ((t (:foreground ,teal-subtle))))
+   '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
+   ;; `(font-lock-constant-face ((t (:foreground "#00D7C5"))))
+   ;; `(font-lock-delimiter-face ((t (:inherit (font-lock-punctuation-face)))))
+   ;; `(font-lock-doc-markup-face ((t (:inherit (font-lock-constant-face)))))
+   ;; `(font-lock-escape-face ((t (:inherit (font-lock-regexp-grouping-backslash)))))
+   ;; `(font-lock-function-call-face ((t (:inherit (font-lock-function-name-face)))))
+   `(font-lock-function-name-face ((t (:foreground ,blue))))
+   `(font-lock-keyword-face ((t (:foreground ,blue))))
+   ;; `(font-lock-negation-char-face ((t (:foreground "#FE0400"))))
+   ;; `(font-lock-number-face ((t nil)))
+   ;; `(font-lock-misc-punctuation-face ((t (:inherit (font-lock-punctuation-face)))))
+   ;; `(font-lock-operator-face ((t nil)))
+   ;; `(font-lock-preprocessor-face ((t (:foreground "#FF85C2"))))
+   ;; `(font-lock-property-name-face ((t (:inherit (font-lock-variable-name-face)))))
+   ;; `(font-lock-property-use-face ((t (:inherit (font-lock-property-name-face)))))
+   ;; `(font-lock-punctuation-face ((t nil)))
+   ;; `(font-lock-regexp-grouping-backslash ((t (:foreground "#00D2F2"))))
+   ;; `(font-lock-regexp-grouping-construct ((t (:foreground "#C877F0"))))
+   `(font-lock-string-face ((t (:foreground ,teal))))
+   `(font-lock-doc-face ((t (:inherit font-lock-string-face))))
+   ;; `(font-lock-type-face ((t (:foreground "#FF8A9D"))))
+   `(font-lock-variable-name-face ((t (:foreground ,purple))))
+   ;; `(font-lock-variable-use-face ((t (:inherit (font-lock-variable-name-face)))))
+   ;; `(font-lock-warning-face ((t (:foreground "#FF6D3C"))))
+   ;; `(button ((t (:underline nil :foreground "#A9A4FF"))))
+   ;; `(link ((t (:underline nil :foreground "#A9A4FF"))))
+   ;; `(link-visited ((t (:underline nil :foreground "#918BFF"))))
+   ;; `(fringe ((t (:foreground "#272829" :background "#090517"))))
+   ;; `(header-line ((t (:foreground "#FF80E3" :background "#090517"))))
+   ;; `(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
+   ;; `(mode-line ((t (:foreground "#7c78b9" :background "#1b1d4a"))))
+   ;; `(mode-line-buffer-id ((t (:foreground "#00F1DD"))))
+   ;; `(mode-line-emphasis ((t (:foreground "#FF80E3"))))
+   ;; `(mode-line-highlight ((t (:foreground "#FF80E3"))))
+   ;; `(mode-line-inactive ((t (:box nil :foreground "#979AA1" :background "#171718" :inherit (mode-line)))))
+   ;; `(isearch ((t (:inverse-video t :foreground "#ffb54c" :background "#090517"))))
+   ;; `(isearch-fail ((t (:foreground "#090517" :background "#FF6D3C"))))
+   ;; `(lazy-highlight ((t (:inverse-video t :foreground "#A9A4FF" :background "#090517"))))
+   ;; `(match ((t (:inverse-video t :foreground "#ffb54c" :background "#090517"))))
+   ;; `(next-error ((t (:inherit (region)))))
+   ;; `(query-replace ((t (:inherit (isearch)))))
+
+   `(hl-line ((t (:background ,blue-subtle))))
+
+   `(show-paren-match ((t (:foreground ,blue-subtle :background ,blue-faded :weight bold))))
+   `(show-paren-mismatch ((t (:inherit lordar-theme-error-inversed))))
+
+   ;;;; rainbow-delimiters
+   `(rainbow-delimiters-depth-1-face ((t (:foreground ,grey-faded))))
+   `(rainbow-delimiters-depth-2-face ((t (:foreground ,grey-faded))))
+   `(rainbow-delimiters-unmatched-face ((t (:weight bold :foreground ,red))))
+   `(rainbow-delimiters-mismatched-face ((t (:weight bold :foreground ,red))))
+
+   ;;;; highlight-parentheses
+   `(highlight-parentheses-highlight ((t (:underline t :foreground ,red))))
+
+
+   `(org-level-1 ((t (:foreground ,ink :weight bold :height 120))))
+   `(org-level-2 ((t (:foreground ,ink :weight bold :height 110))))
+   `(org-level-3 ((t (:foreground ,ink :weight bold :height 100))))
+   `(org-level-4 ((t (:foreground ,ink :weight semi-bold :height 100))))
+   `(org-level-5 ((t (:foreground ,ink :weight semi-bold :height 100))))
+   `(org-level-6 ((t (:foreground ,ink :weight semi-bold :height 100))))
+   `(org-level-7 ((t (:foreground ,ink :weight semi-bold :height 100))))
+   `(org-level-8 ((t (:foreground ,ink :weight semi-bold :height 100))))
+   )
+
+;;;; Custom Variables
+
+  (custom-theme-set-variables
+   'lorisan
+   ;;;; pos-tip
+   ;; `(pos-tip-foreground-color ,grey-lighter)
+   ;; `(pos-tip-background-color ,blue2-darkest)
+
+   ;;;; hl-parens
+   ;; `(highlight-parentheses-background-colors '(,grey-faded))
+   ;; `(highlight-parentheses-colors '(,red))
+
+   ;;;; evil-mode
+   ;; `(evil-normal-state-cursor '(box ,wine-bright))
+   ;; `(evil-motion-state-cursor '(box ,wine-bright))
+   ;; `(evil-insert-state-cursor '(bar ,wine-bright))
+   ;; `(evil-replace-state-cursor '(hbar ,wine-bright))
+   ;; `(evil-operator-state-cursor '((hbar . ,(/ (window-pixel-height) (* (window-height) 2))) ,wine-bright))
+   ;; `(evil-visual-state-cursor '(box ,turquoise-bright))
+   ;; `(evil-emacs-state-cursor '(box ,mint-bright))
+   )
+
+  (setq
+   highlight-parentheses-background-colors '(,green)
+   highlight-parentheses-colors '(,red)
+   )
+
   )
 
-(provide 'lordar-light-theme)
+;;;; Provide Theme
+
+;;;###autoload
+(when (and (boundp 'custom-theme-load-path) load-file-name)
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
+
+(provide-theme 'lordar-light)
 
 ;;; lordar-light-theme.el ends here
