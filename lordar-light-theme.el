@@ -46,9 +46,10 @@
 ;; Faded means the colors is faded but still has a contrast ratio of around 4.5.
 ;; Subtle means there is just a hint of the color left.
 (let (
-      (cream "#f6e5cc")
-      ;; (cream "#f7e9d5")
-      (ink "#000000")
+      ;; (cream "#f6e5cc")
+      (cream "#f7e9d5")
+      ;; (ink "#000000")
+      (ink "#1b1b1b")
       (red "#a30030")
       (red-faded "#b53e48")
       (red-subtle "#efcfb9")            ; #e9b9a6
@@ -65,9 +66,9 @@
       (teal-faded "#48699b")
       (teal-subtle "#e0d4c6")           ; #c9c2b
       ;; (blue "#5139b4")
+      (blue "#502ea1")
       ;; (blue "#27007d")
-      (blue "#1d0061")
-      ;; (blue "#27007d")
+      ;; (blue "#1d0061")
       (blue-faded "#7555b9")
       (blue-subtle "#e6d0ca")           ; #d6bcc8
       (purple "#783289")
@@ -85,7 +86,7 @@
 
 ;;;;; Base
 
-   `(default ((t (:weight normal :foreground ,ink :background ,cream))))
+   `(default ((t (:weight normal :foreground ,ink :background ,cream :family "SauceCodePro Nerd Font Mono"))))
    `(cursor ((t (:background ,blue-faded))))
 
 ;;;;; Custom
@@ -109,8 +110,8 @@
 
 ;;;;; Basis
 
-   ;; `(fixed-pitch ((t (:family "Monospace"))))
-   ;; `(variable-pitch ((t (:family "Alegreya" :height 120))))
+   `(fixed-pitch ((t (:family "SauceCodePro Nerd Font Mono"))))
+   `(variable-pitch ((t (:family "Noto Serif"))))
    ;; `(escape-glyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
    ;; `(homoglyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
    ;; `(minibuffer-prompt ((t (:foreground "#84ADFF"))))
@@ -179,14 +180,14 @@
    `(highlight-parentheses-highlight ((t (:underline t :foreground ,red))))
 
 
-   `(org-level-1 ((t (:foreground ,ink :weight bold :height 120))))
-   `(org-level-2 ((t (:foreground ,ink :weight bold :height 110))))
-   `(org-level-3 ((t (:foreground ,ink :weight bold :height 100))))
-   `(org-level-4 ((t (:foreground ,ink :weight semi-bold :height 100))))
-   `(org-level-5 ((t (:foreground ,ink :weight semi-bold :height 100))))
-   `(org-level-6 ((t (:foreground ,ink :weight semi-bold :height 100))))
-   `(org-level-7 ((t (:foreground ,ink :weight semi-bold :height 100))))
-   `(org-level-8 ((t (:foreground ,ink :weight semi-bold :height 100))))
+   `(org-level-1 ((t (:foreground ,ink :weight bold :height 1.08))))
+   `(org-level-2 ((t (:foreground ,ink :weight bold :height 1.04))))
+   `(org-level-3 ((t (:foreground ,ink :weight bold :height 1.00))))
+   `(org-level-4 ((t (:foreground ,ink :weight semi-bold))))
+   `(org-level-5 ((t (:foreground ,ink :weight semi-bold))))
+   `(org-level-6 ((t (:foreground ,ink :weight semi-bold))))
+   `(org-level-7 ((t (:foreground ,ink :weight semi-bold))))
+   `(org-level-8 ((t (:foreground ,ink :weight semi-bold))))
    )
 
 ;;;; Custom Variables
