@@ -46,10 +46,10 @@
 ;; Faded means the colors is faded but still has a contrast ratio of around 4.5.
 ;; Subtle means there is just a hint of the color left.
 (let (
-      ;; (cream "#f6e5cc")
-      (cream "#f7e9d5")
-      ;; (ink "#000000")
-      (ink "#1b1b1b")
+      ;; (background "#f6e5cc")
+      (background "#f7e9d5")
+      ;; (foreground "#000000")
+      (foreground "#1b1b1b")
       (red "#a30030")
       (red-faded "#b53e48")
       (red-subtle "#efcfb9")            ; #e9b9a6
@@ -86,7 +86,7 @@
 
 ;;;;; Base
 
-   `(default ((t (:weight normal :foreground ,ink :background ,cream :family "SauceCodePro Nerd Font Mono"))))
+   `(default ((t (:weight normal :foreground ,foreground :background ,background :family "SauceCodePro Nerd Font Mono"))))
    `(cursor ((t (:background ,blue-faded))))
 
 ;;;;; Custom
@@ -180,14 +180,14 @@
    `(highlight-parentheses-highlight ((t (:underline t :foreground ,red))))
 
 
-   `(org-level-1 ((t (:foreground ,ink :weight bold :height 1.08))))
-   `(org-level-2 ((t (:foreground ,ink :weight bold :height 1.04))))
-   `(org-level-3 ((t (:foreground ,ink :weight bold :height 1.00))))
-   `(org-level-4 ((t (:foreground ,ink :weight semi-bold))))
-   `(org-level-5 ((t (:foreground ,ink :weight semi-bold))))
-   `(org-level-6 ((t (:foreground ,ink :weight semi-bold))))
-   `(org-level-7 ((t (:foreground ,ink :weight semi-bold))))
-   `(org-level-8 ((t (:foreground ,ink :weight semi-bold))))
+   `(org-level-1 ((t (:foreground ,foreground :weight bold :height 1.08))))
+   `(org-level-2 ((t (:foreground ,foreground :weight bold :height 1.04))))
+   `(org-level-3 ((t (:foreground ,foreground :weight bold :height 1.00))))
+   `(org-level-4 ((t (:foreground ,foreground :weight semi-bold))))
+   `(org-level-5 ((t (:foreground ,foreground :weight semi-bold))))
+   `(org-level-6 ((t (:foreground ,foreground :weight semi-bold))))
+   `(org-level-7 ((t (:foreground ,foreground :weight semi-bold))))
+   `(org-level-8 ((t (:foreground ,foreground :weight semi-bold))))
    )
 
 ;;;; Custom Variables
