@@ -1,0 +1,26 @@
+#+TITLE: Lordar Color Palette
+
+#+NAME: Theme
+: Lordar
+#+NAME: Foreground
+: #1b1b1b
+#+NAME: Background
+: #f9efe1
+#+NAME: Text
+: Nach kaum etwas sehnen wir uns so verzweifelt wie nach Liebe. Die meisten Menschen halten Liebe für etwas, das man nicht eigens erlernen muss, sondern dass man einfach empfindet. 
+
+#+NAME: Colors
+| Name  | Foreground | Background | Text                        |
+|-------+------------+------------+-----------------------------|
+| user1 |            | 100 100 45 |                             |
+| user2 | 100 100 45 |            |                             |
+| user3 | 100 100 45 |            | Hier kommt ein anderer Text |
+
+
+#+BEGIN_SRC emacs-lisp :noweb yes :var colors=Colors
+  (theme-developing-create-color-scheme
+   "<<Theme()>>" "<<Foreground()>>" "<<Background()>>" colors :text "<<Text()>>")
+#+END_SRC
+
+#+RESULTS:
+: #<buffer Lordar>

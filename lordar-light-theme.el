@@ -115,17 +115,22 @@
       (background-93 "#f7e9d5")
       (background-94 "#f8ecdb")
       (background-95 "#f9efe1")
-      (background-96 "#faf2e8")
-      (background background-95)
+      (cream background-94)
+      (background cream)
 
-      (foreground "#000000")
-      (foreground "#1b1b1b")
+      (foreground-black "#000000")
+      (foreground-grey "#1b1b1b")
+      (foreground foreground-grey)
+
+      (red-bright "")
       (red "#a30030")
       (red-faded "#b53e48")
       (red-subtle "#efcfb9")            ; #e9b9a6
+      (brown "#7A5C31")
       (orange "#843a00")
       (orange-faded "#9a5625")
       (orange-subtle "#ebd0b4")         ; #e0bd9c
+
       (yellow "#634d00")
       (yellow-faded "#7c6527")
       (yellow-subtle "#e6d2b4")         ; #d5c19d
@@ -171,12 +176,12 @@
    `(lordar-light-theme-verbatim ((t :foreground ,yellow)))
    `(lordar-light-theme-hightlight ((t :foreground ,blue)))
 
-   `(lordar-light-theme-success ((t :foreground ,green)))
-   `(lordar-light-theme-success-inversed ((t :foreground ,green-subtle :background ,green)))
-   `(lordar-light-theme-warning ((t :foreground ,orange)))
-   `(lordar-light-theme-warning-inversed ((t :foreground ,orange-subtle :background ,orange)))
-   `(lordar-light-theme-error ((t :foreground ,green)))
-   `(lordar-light-theme-error-inversed ((t :foreground ,red-subtle :background ,red)))
+   ;; `(lordar-light-theme-success ((t :foreground ,green)))
+   ;; `(lordar-light-theme-success-inversed ((t :foreground ,green-subtle :background ,green)))
+   ;; `(lordar-light-theme-warning ((t :foreground ,orange)))
+   ;; `(lordar-light-theme-warning-inversed ((t :foreground ,orange-subtle :background ,orange)))
+   ;; `(lordar-light-theme-error ((t :foreground ,green)))
+   ;; `(lordar-light-theme-error-inversed ((t :foreground ,red-subtle :background ,red)))
 
 ;;;;; Basis
 
@@ -192,7 +197,7 @@
    ;; `(trailing-whitespace ((t (:underline (:color "#FE0400" :style wave :position nil) :background "#272829"))))
    ;; `(font-lock-bracket-face ((t (:inherit (font-lock-punctuation-face)))))
    `(font-lock-builtin-face ((t (:foreground ,blue))))
-   `(font-lock-comment-face ((t (:foreground ,teal-subtle))))
+   `(font-lock-comment-face ((t (:foreground "#8d8fa8"))))
    '(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
    ;; `(font-lock-constant-face ((t (:foreground "#00D7C5"))))
    ;; `(font-lock-delimiter-face ((t (:inherit (font-lock-punctuation-face)))))
@@ -237,7 +242,7 @@
 
    `(hl-line ((t (:background ,blue-subtle))))
 
-   `(show-paren-match ((t (:foreground ,blue-subtle :background ,blue-faded :weight bold))))
+   `(show-paren-match ((t (:foreground unspecified :background unspecified :weight bold))))
    `(show-paren-mismatch ((t (:inherit lordar-light-theme-error-inversed))))
 
    ;;;; rainbow-delimiters
@@ -283,8 +288,8 @@
    )
 
   (setq
-   highlight-parentheses-background-colors '(,green)
-   highlight-parentheses-colors '(,red)
+   highlight-parentheses-background-colors (list green)
+   highlight-parentheses-colors (list red)
    )
 
   )
