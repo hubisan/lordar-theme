@@ -115,7 +115,7 @@
       (background-93 "#f7e9d5")
       (background-94 "#f8ecdb")
       (background-95 "#f9efe1")
-      (cream background-94)
+      (cream background-93)
       (background cream)
 
       (foreground-black "#000000")

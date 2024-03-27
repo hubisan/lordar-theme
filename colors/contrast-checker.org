@@ -1,20 +1,6 @@
 #+TITLE: Contrast Checker
 #+STARTUP: showall
 
-#+NAME: variables
-| Variable | Value      | Description |
-|----------+------------+-------------|
-| user1    | alice      | Manager     |
-| user2    | bob        | Developer   |
-
-#+NAME: lookup
-#+begin_src emacs-lisp :var data=variables
-  (message "%s" data)
-#+end_src
-
-#+RESULTS: lookup
-: ((user1 alice Manager) (user2 bob Developer))
-
 #+NAME: Foreground
 : #1b1b1b
 #+NAME: Background
