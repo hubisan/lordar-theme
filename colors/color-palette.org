@@ -17,6 +17,7 @@ Contrast-ratio: A good contrast ratio is any number above 4.5. Larger text (abov
 | user1 |            | 100 100 45 |                             |
 | user2 | 100 100 45 |            |                             |
 | user3 | 100 100 45 |            | Hier kommt ein anderer Text |
+| test  | #f7e9d5    |            |                             |
 
 #+BEGIN_SRC emacs-lisp :noweb yes :var colors=Colors :results silent
   (theme-developing-create-color-palette

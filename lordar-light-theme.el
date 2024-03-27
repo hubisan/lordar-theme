@@ -152,6 +152,9 @@
       (pink "#872d67")
       (pink-faded "#9b4e78")
       (pink-subtle "#ead0c1")           ; #debbb5
+
+      ;; Die Farbe welche Swiper nutzt, das Grün von weiss nicht wo, ist ne
+      ;; coole hightlight farbe. Prüfen.
       (grey "#505050")
       (grey-faded "#6a6764")
       (grey-subtle "#e3d4be"))          ; #cec2af
@@ -225,22 +228,27 @@
    ;; `(button ((t (:underline nil :foreground "#A9A4FF"))))
    ;; `(link ((t (:underline nil :foreground "#A9A4FF"))))
    ;; `(link-visited ((t (:underline nil :foreground "#918BFF"))))
-   ;; `(fringe ((t (:foreground "#272829" :background "#090517"))))
-   ;; `(header-line ((t (:foreground "#FF80E3" :background "#090517"))))
+   `(fringe ((t (:inherit default :foreground "#bba98e" ,grey))))
+   `(header-line ((t (:foreground ,foreground :background ,background))))
    ;; `(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
-   ;; `(mode-line ((t (:foreground "#7c78b9" :background "#1b1d4a"))))
+
+   `(mode-line ((t (:foreground "#4e4639" :background "#f0cdc3"))))
    ;; `(mode-line-buffer-id ((t (:foreground "#00F1DD"))))
    ;; `(mode-line-emphasis ((t (:foreground "#FF80E3"))))
    ;; `(mode-line-highlight ((t (:foreground "#FF80E3"))))
-   ;; `(mode-line-inactive ((t (:box nil :foreground "#979AA1" :background "#171718" :inherit (mode-line)))))
+   `(mode-line-inactive ((t (:background "#e8dbc8" :foreground "#90826d"))))
    ;; `(isearch ((t (:inverse-video t :foreground "#ffb54c" :background "#090517"))))
    ;; `(isearch-fail ((t (:foreground "#090517" :background "#FF6D3C"))))
    ;; `(lazy-highlight ((t (:inverse-video t :foreground "#A9A4FF" :background "#090517"))))
    ;; `(match ((t (:inverse-video t :foreground "#ffb54c" :background "#090517"))))
    ;; `(next-error ((t (:inherit (region)))))
    ;; `(query-replace ((t (:inherit (isearch)))))
+   `(doom-modeline ((t (:inherit mode-line :weight normal))))
+   `(doom-modeline-bar ((t (:inherit mode-line))))
+   `(doom-modeline-bar-inactive ((t (:inherit mode-line-inactive))))
 
    `(hl-line ((t (:background ,blue-subtle))))
+   `(hl-line ((t (:background "#eedfdc"))))
 
    `(show-paren-match ((t (:foreground unspecified :background unspecified :weight bold))))
    `(show-paren-mismatch ((t (:inherit lordar-light-theme-error-inversed))))
@@ -254,7 +262,6 @@
    ;;;; highlight-parentheses
    `(highlight-parentheses-highlight ((t (:underline t :foreground ,red))))
 
-
    `(org-level-1 ((t (:foreground ,foreground :weight bold :height 1.08))))
    `(org-level-2 ((t (:foreground ,foreground :weight bold :height 1.04))))
    `(org-level-3 ((t (:foreground ,foreground :weight bold :height 1.00))))
@@ -263,6 +270,14 @@
    `(org-level-6 ((t (:foreground ,foreground :weight semi-bold))))
    `(org-level-7 ((t (:foreground ,foreground :weight semi-bold))))
    `(org-level-8 ((t (:foreground ,foreground :weight semi-bold))))
+
+;;;;; window-divider
+
+   ;; Alt color for mode line
+   `(window-divider ((t (:foreground "#e8dbc8"))))
+   `(window-divider-first-pixel ((t (:foreground "#e8dbc8"))))
+   `(window-divider-last-pixel ((t (:foreground "#e8dbc8"))))
+
    )
 
 ;;;; Custom Variables
@@ -290,9 +305,7 @@
   (setq
    highlight-parentheses-background-colors (list green)
    highlight-parentheses-colors (list red)
-   )
-
-  )
+   ))
 
 ;;;; Provide Theme
 

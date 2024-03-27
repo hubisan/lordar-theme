@@ -2,15 +2,15 @@
 #+STARTUP: showall
 
 #+NAME: Foreground
-: #1b1b1b
+: #000
 #+NAME: Background
-: #f9efe1
+: #f7e9d5
 #+BEGIN_SRC emacs-lisp :noweb yes
   (theme-developing-contrast-ratio-checker "<<Foreground()>>" "<<Background()>>")
 #+END_SRC
 
 #+RESULTS:
-: 15.14 (fg #1b1b1b bg #f9efe1)
+: 17.57 (fg #000 bg #f7e9d5)
 
 Nach kaum etwas sehnen wir uns so verzweifelt wie nach Liebe. Die meisten Menschen halten Liebe für etwas, das man nicht eigens erlernen muss, sondern dass man einfach empfindet. Tatsächlich geht es ihnen eigentlich gar nicht darum, selbst zu lieben, sondern darum, geliebt zu werden. Um liebenswert zu erscheinen, streben sie nach Macht und gesellschaftlichem Erfolg, steigern ihre Attraktivität durch schöne Kleidung, Kosmetik und gute Manieren. Sie suchen nach einem geeigneten Objekt der Liebe (einem Menschen, den sie lieben können und der sie zurückliebt) und folgen bei dem, was körperlich und geistig attraktiv auf sie wirkt, wechselnden Moden. Infolge der Konsum- und Marketingmentalität, die in den westlichen Gesellschaften herrscht, wird Liebe so zu einem Tauschgeschäft: Man verliebt sich, wenn man das Gefühl hat, das beste Objekt gefunden zu haben, das einem angesichts des eigenen Marktwertes zusteht.
 
