@@ -247,7 +247,7 @@
    `(doom-modeline-bar ((t (:inherit mode-line))))
    `(doom-modeline-bar-inactive ((t (:inherit mode-line-inactive))))
 
-   `(hl-line ((t (:background ,blue-subtle))))
+   ;; `(hl-line ((t (:background ,blue-subtle))))
    `(hl-line ((t (:background "#eedfdc"))))
 
    `(show-paren-match ((t (:foreground unspecified :background unspecified :weight bold))))
