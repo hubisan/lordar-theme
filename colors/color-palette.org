@@ -9,6 +9,8 @@
 #+NAME: Text
 : Nach kaum etwas sehnen wir uns so verzweifelt wie nach Liebe. Die meisten Menschen halten Liebe für etwas, das man nicht eigens erlernen muss, sondern dass man einfach empfindet. 
 
+Contrast-ratio: A good contrast ratio is any number above 4.5. Larger text (above 18pt or bold above 14pt) can dip to 3:1, but would ideally be higher.
+
 #+NAME: Colors
 | Name  | Foreground | Background | Text                        |
 |-------+------------+------------+-----------------------------|
@@ -16,9 +18,8 @@
 | user2 | 100 100 45 |            |                             |
 | user3 | 100 100 45 |            | Hier kommt ein anderer Text |
 
-
 #+BEGIN_SRC emacs-lisp :noweb yes :var colors=Colors
-  (theme-developing-create-color-scheme
+  (theme-developing-create-color-palette
    "<<Theme()>>" "<<Foreground()>>" "<<Background()>>" colors :text "<<Text()>>")
 #+END_SRC
 
