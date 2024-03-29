@@ -232,7 +232,7 @@
    `(header-line ((t (:foreground ,foreground :background ,background))))
    ;; `(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
 
-   `(mode-line ((t (:foreground "#4e4639" :background "#f0cdc3"))))
+   `(mode-line ((t (:foreground "#4e4639" :background "#e9d1c1"))))
    ;; `(mode-line-buffer-id ((t (:foreground "#00F1DD"))))
    ;; `(mode-line-emphasis ((t (:foreground "#FF80E3"))))
    ;; `(mode-line-highlight ((t (:foreground "#FF80E3"))))
@@ -248,7 +248,8 @@
    `(doom-modeline-bar-inactive ((t (:inherit mode-line-inactive))))
 
    ;; `(hl-line ((t (:background ,blue-subtle))))
-   `(hl-line ((t (:background "#eedfdc"))))
+   `(hl-line ((t (:background "#ede1d0"))))
+   ;; `(hl-line ((t (:background "#eedfd0"))))
 
    `(show-paren-match ((t (:foreground unspecified :background unspecified :weight bold))))
    `(show-paren-mismatch ((t (:inherit lordar-light-theme-error-inversed))))
