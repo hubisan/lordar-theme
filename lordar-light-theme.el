@@ -232,6 +232,8 @@
    `(header-line ((t (:foreground ,foreground :background ,background))))
    ;; `(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
 
+   `(bold ((t (:weight semi-bold))))
+
    `(mode-line ((t (:foreground "#4e4639" :background "#e9d1c1"))))
    ;; `(mode-line-buffer-id ((t (:foreground "#00F1DD"))))
    ;; `(mode-line-emphasis ((t (:foreground "#FF80E3"))))
