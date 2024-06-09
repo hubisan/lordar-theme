@@ -193,7 +193,8 @@
    ;; `(escape-glyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
    ;; `(homoglyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
    ;; `(minibuffer-prompt ((t (:foreground "#84ADFF"))))
-   ;; `(highlight ((t (:inverse-video nil :background "#272829"))))
+   ;; #b4eeb4
+   `(highlight ((t (:background "darkseagreen2" :distant-foreground ,foreground))))
    ;; `(region ((t (:extend t :background "#332673"))))
    ;; `(shadow ((t (:foreground "#e1e2e5"))))
    ;; `(secondary-selection ((t (:extend t :background "#2b293b"))))
@@ -265,22 +266,23 @@
    ;;;; highlight-parentheses
    `(highlight-parentheses-highlight ((t (:underline t :foreground ,red))))
 
-   `(org-level-1 ((t (:foreground ,foreground :weight bold :height 1.08))))
-   `(org-level-2 ((t (:foreground ,foreground :weight bold :height 1.04))))
-   `(org-level-3 ((t (:foreground ,foreground :weight bold :height 1.00))))
-   `(org-level-4 ((t (:foreground ,foreground :weight semi-bold))))
-   `(org-level-5 ((t (:foreground ,foreground :weight semi-bold))))
-   `(org-level-6 ((t (:foreground ,foreground :weight semi-bold))))
-   `(org-level-7 ((t (:foreground ,foreground :weight semi-bold))))
-   `(org-level-8 ((t (:foreground ,foreground :weight semi-bold))))
+;;;;; Outline
 
-;;;;; window-divider
+   `(outline-minor-1 ((t (:foreground ,foreground :weight bold :height 1.08))))
+   `(outline-minor-2 ((t (:foreground ,foreground :weight bold :height 1.04))))
+   `(outline-minor-3 ((t (:foreground ,foreground :weight bold :height 1.00))))
+   `(outline-minor-4 ((t (:foreground ,foreground :weight semi-bold))))
+   `(outline-minor-5 ((t (:foreground ,foreground :weight semi-bold))))
+   `(outline-minor-6 ((t (:foreground ,foreground :weight semi-bold))))
+   `(outline-minor-7 ((t (:foreground ,foreground :weight semi-bold))))
+   `(outline-minor-8 ((t (:foreground ,foreground :weight semi-bold))))
+
+;;;;; Window-Divider
 
    ;; Alt color for mode line
    `(window-divider ((t (:foreground "#e8dbc8"))))
    `(window-divider-first-pixel ((t (:foreground "#e8dbc8"))))
    `(window-divider-last-pixel ((t (:foreground "#e8dbc8"))))
-
    )
 
 ;;;; Custom Variables
@@ -291,24 +293,22 @@
    ;; `(pos-tip-foreground-color ,grey-lighter)
    ;; `(pos-tip-background-color ,blue2-darkest)
 
-   ;;;; hl-parens
-   ;; `(highlight-parentheses-background-colors '(,grey-faded))
-   ;; `(highlight-parentheses-colors '(,red))
+;;;;; Hl-Parens
 
-   ;;;; evil-mode
-   ;; `(evil-normal-state-cursor '(box ,wine-bright))
-   ;; `(evil-motion-state-cursor '(box ,wine-bright))
-   ;; `(evil-insert-state-cursor '(bar ,wine-bright))
-   ;; `(evil-replace-state-cursor '(hbar ,wine-bright))
-   ;; `(evil-operator-state-cursor '((hbar . ,(/ (window-pixel-height) (* (window-height) 2))) ,wine-bright))
-   ;; `(evil-visual-state-cursor '(box ,turquoise-bright))
-   ;; `(evil-emacs-state-cursor '(box ,mint-bright))
+   `(highlight-parentheses-background-colors '(,green))
+   `(highlight-parentheses-colors '(,red))
+
+;;;;; Evil-Mode
+
+   `(evil-normal-state-cursor '(box ,blue))
+   `(evil-motion-state-cursor '(box ,blue))
+   `(evil-insert-state-cursor '(bar ,blue))
+   `(evil-replace-state-cursor '(hbar ,blue))
+   `(evil-operator-state-cursor '((hbar . ,(/ (window-pixel-height) (* (window-height) 2))) ,blue))
+   `(evil-visual-state-cursor '(box ,green))
+   `(evil-emacs-state-cursor '(box ,green))
    )
-
-  (setq
-   highlight-parentheses-background-colors (list green)
-   highlight-parentheses-colors (list red)
-   ))
+  )
 
 ;;;; Provide Theme
 

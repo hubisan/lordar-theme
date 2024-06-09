@@ -20,7 +20,7 @@ Contrast-ratio: A good contrast ratio is any number above 4.5. Larger text (abov
 | test  | #f7e9d5    |            |                             |
 
 #+BEGIN_SRC emacs-lisp :noweb yes :var colors=Colors :results silent
-  (theme-developing-create-color-palette
+  (theme-dev-create-color-palette
    "<<Theme()>>" "<<Foreground()>>" "<<Background()>>" colors :text "<<Text()>>")
 #+END_SRC
 
@@ -30,6 +30,6 @@ Contrast-ratio: A good contrast ratio is any number above 4.5. Larger text (abov
   (let ((buf "lordar-palette"))
     (when (get-buffer buf)
       (kill-buffer buf))
-    (theme-developing-create-hsluv-palette buf nil 100 44 80 "#f7e9d5" "Lordar Theme" t) 
+    (theme-dev-create-hsluv-palette buf nil 100 44 80 "#f7e9d5" "Lordar Theme" t) 
     (switch-to-buffer-other-window buf))
 #+END_SRC
